@@ -807,7 +807,7 @@ export interface ApiChildChild extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     name: Attribute.String;
@@ -828,7 +828,6 @@ export interface ApiChildChild extends Schema.CollectionType {
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::child.child',
       'oneToOne',
@@ -853,7 +852,7 @@ export interface ApiFavouriteFavourite extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     meal_id: Attribute.Relation<
@@ -868,7 +867,6 @@ export interface ApiFavouriteFavourite extends Schema.CollectionType {
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::favourite.favourite',
       'oneToOne',
@@ -890,9 +888,10 @@ export interface ApiLocationLocation extends Schema.CollectionType {
     singularName: 'location';
     pluralName: 'locations';
     displayName: 'Location';
+    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     title: Attribute.String;
@@ -904,7 +903,6 @@ export interface ApiLocationLocation extends Schema.CollectionType {
     longitude: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::location.location',
       'oneToOne',
@@ -1015,7 +1013,7 @@ export interface ApiRatingRating extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     rating: Attribute.Integer &
@@ -1035,7 +1033,6 @@ export interface ApiRatingRating extends Schema.CollectionType {
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::rating.rating',
       'oneToOne',
