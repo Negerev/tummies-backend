@@ -13,7 +13,8 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {}
     },
     "photo": {
       "type": "media",
@@ -21,23 +22,28 @@
       "required": false,
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "pluginOptions": {}
     },
     "age": {
-      "type": "integer"
+      "type": "integer",
+      "pluginOptions": {}
     },
     "gender": {
       "type": "enumeration",
       "enum": [
         "male",
         "female"
-      ]
+      ],
+      "pluginOptions": {}
     },
     "weight": {
-      "type": "integer"
+      "type": "integer",
+      "pluginOptions": {}
     },
     "height": {
-      "type": "integer"
+      "type": "integer",
+      "pluginOptions": {}
     },
     "activities": {
       "type": "relation",
