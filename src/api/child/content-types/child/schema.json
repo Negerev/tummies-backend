@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "children",
+  "info": {
+    "singularName": "child",
+    "pluralName": "children",
+    "displayName": "Child",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "age": {
+      "type": "integer"
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "male",
+        "female"
+      ]
+    },
+    "weight": {
+      "type": "integer"
+    },
+    "height": {
+      "type": "integer"
+    },
+    "activities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::activity.activity"
+    },
+    "warnings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::warning.warning"
+    }
+  }
+}

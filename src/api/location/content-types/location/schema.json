@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "locations",
+  "info": {
+    "singularName": "location",
+    "pluralName": "locations",
+    "displayName": "Location"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "area": {
+      "type": "text"
+    },
+    "building": {
+      "type": "string"
+    },
+    "flat": {
+      "type": "string"
+    },
+    "street": {
+      "type": "text"
+    },
+    "latitude": {
+      "type": "string"
+    },
+    "longitude": {
+      "type": "string"
+    }
+  }
+}

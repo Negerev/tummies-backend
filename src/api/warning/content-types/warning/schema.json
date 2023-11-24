@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "warnings",
+  "info": {
+    "singularName": "warning",
+    "pluralName": "warnings",
+    "displayName": "Warning"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
