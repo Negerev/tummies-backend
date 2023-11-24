@@ -850,12 +850,12 @@ export interface ApiFavouriteFavourite extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    meals: Attribute.Relation<
+    meal_id: Attribute.Relation<
       'api::favourite.favourite',
       'oneToMany',
       'api::meal.meal'
     >;
-    users_permissions_users: Attribute.Relation<
+    user_id: Attribute.Relation<
       'api::favourite.favourite',
       'oneToMany',
       'plugin::users-permissions.user'
@@ -1006,6 +1006,7 @@ export interface ApiRatingRating extends Schema.CollectionType {
     singularName: 'rating';
     pluralName: 'ratings';
     displayName: 'Rating';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1016,12 +1017,12 @@ export interface ApiRatingRating extends Schema.CollectionType {
         min: 0;
         max: 5;
       }>;
-    meals: Attribute.Relation<
+    meal_id: Attribute.Relation<
       'api::rating.rating',
       'oneToMany',
       'api::meal.meal'
     >;
-    users_permissions_users: Attribute.Relation<
+    user_id: Attribute.Relation<
       'api::rating.rating',
       'oneToMany',
       'plugin::users-permissions.user'
