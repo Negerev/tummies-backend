@@ -35,6 +35,12 @@
           "localized": true
         }
       }
+    },
+    "child": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::child.child",
+      "inversedBy": "activities"
     }
   }
 }

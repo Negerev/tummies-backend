@@ -88,7 +88,20 @@
     "categories": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::category.category"
+      "target": "api::category.category",
+      "mappedBy": "meal"
+    },
+    "rating": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::rating.rating",
+      "inversedBy": "meal_ids"
+    },
+    "favourite": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::favourite.favourite",
+      "inversedBy": "meal_ids"
     }
   }
 }

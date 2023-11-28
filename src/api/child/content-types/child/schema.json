@@ -48,12 +48,20 @@
     "activities": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::activity.activity"
+      "target": "api::activity.activity",
+      "mappedBy": "child"
     },
     "warnings": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::warning.warning"
+      "target": "api::warning.warning",
+      "mappedBy": "child"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "children"
     }
   }
 }

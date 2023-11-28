@@ -17,15 +17,17 @@
       "min": 0,
       "max": 5
     },
-    "meal_id": {
+    "meal_ids": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::meal.meal"
+      "target": "api::meal.meal",
+      "mappedBy": "rating"
     },
-    "user_id": {
+    "user_ids": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "plugin::users-permissions.user"
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "rating"
     }
   }
 }

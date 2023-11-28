@@ -95,12 +95,26 @@
     "children": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::child.child"
+      "target": "api::child.child",
+      "mappedBy": "user"
     },
     "locations": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::location.location"
+      "target": "api::location.location",
+      "mappedBy": "user"
+    },
+    "rating": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::rating.rating",
+      "inversedBy": "user_ids"
+    },
+    "favourite": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::favourite.favourite",
+      "inversedBy": "user_ids"
     }
   }
 }

@@ -675,6 +675,16 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToMany',
       'api::location.location'
     >;
+    rating: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'manyToOne',
+      'api::rating.rating'
+    >;
+    favourite: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'manyToOne',
+      'api::favourite.favourite'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -721,6 +731,11 @@ export interface ApiActivityActivity extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    child: Attribute.Relation<
+      'api::activity.activity',
+      'manyToOne',
+      'api::child.child'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -774,6 +789,11 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    meal: Attribute.Relation<
+      'api::category.category',
+      'manyToOne',
+      'api::meal.meal'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -826,6 +846,11 @@ export interface ApiChildChild extends Schema.CollectionType {
       'oneToMany',
       'api::warning.warning'
     >;
+    user: Attribute.Relation<
+      'api::child.child',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -855,12 +880,12 @@ export interface ApiFavouriteFavourite extends Schema.CollectionType {
     draftAndPublish: false;
   };
   attributes: {
-    meal_id: Attribute.Relation<
+    meal_ids: Attribute.Relation<
       'api::favourite.favourite',
       'oneToMany',
       'api::meal.meal'
     >;
-    user_id: Attribute.Relation<
+    user_ids: Attribute.Relation<
       'api::favourite.favourite',
       'oneToMany',
       'plugin::users-permissions.user'
@@ -901,6 +926,11 @@ export interface ApiLocationLocation extends Schema.CollectionType {
     street: Attribute.Text;
     latitude: Attribute.String;
     longitude: Attribute.String;
+    user: Attribute.Relation<
+      'api::location.location',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -988,6 +1018,16 @@ export interface ApiMealMeal extends Schema.CollectionType {
       'oneToMany',
       'api::category.category'
     >;
+    rating: Attribute.Relation<
+      'api::meal.meal',
+      'manyToOne',
+      'api::rating.rating'
+    >;
+    favourite: Attribute.Relation<
+      'api::meal.meal',
+      'manyToOne',
+      'api::favourite.favourite'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1021,12 +1061,12 @@ export interface ApiRatingRating extends Schema.CollectionType {
         min: 0;
         max: 5;
       }>;
-    meal_id: Attribute.Relation<
+    meal_ids: Attribute.Relation<
       'api::rating.rating',
       'oneToMany',
       'api::meal.meal'
     >;
-    user_id: Attribute.Relation<
+    user_ids: Attribute.Relation<
       'api::rating.rating',
       'oneToMany',
       'plugin::users-permissions.user'
@@ -1077,6 +1117,11 @@ export interface ApiWarningWarning extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    child: Attribute.Relation<
+      'api::warning.warning',
+      'manyToOne',
+      'api::child.child'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

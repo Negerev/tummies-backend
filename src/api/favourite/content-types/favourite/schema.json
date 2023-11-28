@@ -12,15 +12,17 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "meal_id": {
+    "meal_ids": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::meal.meal"
+      "target": "api::meal.meal",
+      "mappedBy": "favourite"
     },
-    "user_id": {
+    "user_ids": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "plugin::users-permissions.user"
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "favourite"
     }
   }
 }
