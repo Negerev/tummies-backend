@@ -7,8 +7,8 @@ export default {
         colors: {
           primary100: "#f3eddf",
           primary200: "#e0c1f4",
-          primary500: "#ac73e6",
-          primary600: "#9736e8",
+          primary500: "#f55926",
+          primary600: "#f55926",
           primary700: "#F55926",
           danger700: "#b72b1a",
         },
