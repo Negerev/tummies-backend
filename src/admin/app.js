@@ -1,5 +1,10 @@
+import favicon from './extensions/favicon.ico';
+
 export default {
   config: {
+      head: {
+          favicon: favicon,
+      },
     // Override or extend the theme
     theme: {
       // overwrite light theme properties
