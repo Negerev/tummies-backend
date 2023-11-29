@@ -16,6 +16,8 @@ export default {
           primary600: "#f55926",
           primary700: "#F55926",
           danger700: "#b72b1a",
+            buttonPrimary500:"#f55926",
+            buttonPrimary600: "#f55926",
         },
       },
 
