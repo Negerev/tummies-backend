@@ -687,7 +687,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     >;
     subscribe: Attribute.Relation<
       'plugin::users-permissions.user',
-      'oneToOne',
+      'manyToOne',
       'api::subscribe.subscribe'
     >;
     createdAt: Attribute.DateTime;
@@ -1106,9 +1106,9 @@ export interface ApiSubscribeSubscribe extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     price: Attribute.Decimal;
-    user: Attribute.Relation<
+    users: Attribute.Relation<
       'api::subscribe.subscribe',
-      'oneToOne',
+      'oneToMany',
       'plugin::users-permissions.user'
     >;
     createdAt: Attribute.DateTime;

@@ -118,9 +118,9 @@
     },
     "subscribe": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::subscribe.subscribe",
-      "inversedBy": "user"
+      "inversedBy": "users"
     }
   }
 }
