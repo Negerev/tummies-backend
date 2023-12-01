@@ -685,6 +685,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'api::favourite.favourite'
     >;
+    subscribe: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToOne',
+      'api::subscribe.subscribe'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1088,6 +1093,42 @@ export interface ApiRatingRating extends Schema.CollectionType {
   };
 }
 
+export interface ApiSubscribeSubscribe extends Schema.CollectionType {
+  collectionName: 'subscribes';
+  info: {
+    singularName: 'subscribe';
+    pluralName: 'subscribes';
+    displayName: 'Subscribe';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    price: Attribute.Decimal;
+    user: Attribute.Relation<
+      'api::subscribe.subscribe',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::subscribe.subscribe',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::subscribe.subscribe',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiWarningWarning extends Schema.CollectionType {
   collectionName: 'warnings';
   info: {
@@ -1169,6 +1210,7 @@ declare module '@strapi/types' {
       'api::location.location': ApiLocationLocation;
       'api::meal.meal': ApiMealMeal;
       'api::rating.rating': ApiRatingRating;
+      'api::subscribe.subscribe': ApiSubscribeSubscribe;
       'api::warning.warning': ApiWarningWarning;
     }
   }
