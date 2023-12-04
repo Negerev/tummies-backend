@@ -18,11 +18,11 @@
       "target": "api::meal.meal",
       "mappedBy": "favourites"
     },
-    "user_ids": {
+    "user_id": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "oneToOne",
       "target": "plugin::users-permissions.user",
-      "mappedBy": "favourite"
+      "inversedBy": "favourite"
     }
   }
 }

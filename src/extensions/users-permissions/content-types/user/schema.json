@@ -98,18 +98,6 @@
       "target": "api::location.location",
       "mappedBy": "user"
     },
-    "rating": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::rating.rating",
-      "inversedBy": "user_ids"
-    },
-    "favourite": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::favourite.favourite",
-      "inversedBy": "user_ids"
-    },
     "subscribe": {
       "type": "relation",
       "relation": "manyToOne",
@@ -121,6 +109,18 @@
       "relation": "oneToMany",
       "target": "api::child.child",
       "mappedBy": "user"
+    },
+    "favourite": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::favourite.favourite",
+      "mappedBy": "user_id"
+    },
+    "rating": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::rating.rating",
+      "mappedBy": "user_id"
     }
   }
 }

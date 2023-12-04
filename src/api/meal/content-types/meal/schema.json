@@ -87,12 +87,6 @@
         }
       }
     },
-    "rating": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::rating.rating",
-      "inversedBy": "meal_ids"
-    },
     "categories": {
       "type": "relation",
       "relation": "manyToMany",
@@ -104,6 +98,12 @@
       "relation": "manyToMany",
       "target": "api::favourite.favourite",
       "inversedBy": "meal_ids"
+    },
+    "rating": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::rating.rating",
+      "mappedBy": "meal_id"
     }
   }
 }

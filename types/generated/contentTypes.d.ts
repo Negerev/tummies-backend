@@ -710,16 +710,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToMany',
       'api::location.location'
     >;
-    rating: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'manyToOne',
-      'api::rating.rating'
-    >;
-    favourite: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'manyToOne',
-      'api::favourite.favourite'
-    >;
     subscribe: Attribute.Relation<
       'plugin::users-permissions.user',
       'manyToOne',
@@ -729,6 +719,16 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'plugin::users-permissions.user',
       'oneToMany',
       'api::child.child'
+    >;
+    favourite: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToOne',
+      'api::favourite.favourite'
+    >;
+    rating: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToOne',
+      'api::rating.rating'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -934,9 +934,9 @@ export interface ApiFavouriteFavourite extends Schema.CollectionType {
       'manyToMany',
       'api::meal.meal'
     >;
-    user_ids: Attribute.Relation<
+    user_id: Attribute.Relation<
       'api::favourite.favourite',
-      'oneToMany',
+      'oneToOne',
       'plugin::users-permissions.user'
     >;
     createdAt: Attribute.DateTime;
@@ -1064,11 +1064,6 @@ export interface ApiMealMeal extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    rating: Attribute.Relation<
-      'api::meal.meal',
-      'manyToOne',
-      'api::rating.rating'
-    >;
     categories: Attribute.Relation<
       'api::meal.meal',
       'manyToMany',
@@ -1078,6 +1073,11 @@ export interface ApiMealMeal extends Schema.CollectionType {
       'api::meal.meal',
       'manyToMany',
       'api::favourite.favourite'
+    >;
+    rating: Attribute.Relation<
+      'api::meal.meal',
+      'oneToOne',
+      'api::rating.rating'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1112,14 +1112,14 @@ export interface ApiRatingRating extends Schema.CollectionType {
         min: 0;
         max: 5;
       }>;
-    meal_ids: Attribute.Relation<
+    meal_id: Attribute.Relation<
       'api::rating.rating',
-      'oneToMany',
+      'oneToOne',
       'api::meal.meal'
     >;
-    user_ids: Attribute.Relation<
+    user_id: Attribute.Relation<
       'api::rating.rating',
-      'oneToMany',
+      'oneToOne',
       'plugin::users-permissions.user'
     >;
     createdAt: Attribute.DateTime;
