@@ -116,11 +116,11 @@
       "target": "api::favourite.favourite",
       "mappedBy": "user_id"
     },
-    "rating": {
+    "ratings": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::rating.rating",
-      "mappedBy": "user_id"
+      "mappedBy": "user"
     }
   }
 }

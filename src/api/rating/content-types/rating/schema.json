@@ -17,17 +17,17 @@
       "min": 0,
       "max": 5
     },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "ratings"
+    },
     "meal_id": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::meal.meal",
-      "inversedBy": "rating"
-    },
-    "user_id": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "rating"
+      "inversedBy": "ratings"
     }
   }
 }

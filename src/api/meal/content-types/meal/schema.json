@@ -99,9 +99,9 @@
       "target": "api::favourite.favourite",
       "inversedBy": "meal_ids"
     },
-    "rating": {
+    "ratings": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::rating.rating",
       "mappedBy": "meal_id"
     }
