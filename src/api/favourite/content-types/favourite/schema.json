@@ -14,9 +14,9 @@
   "attributes": {
     "meal_ids": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::meal.meal",
-      "mappedBy": "favourite"
+      "mappedBy": "favourites"
     },
     "user_ids": {
       "type": "relation",

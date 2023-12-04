@@ -22,7 +22,9 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true,
+      "unique": true
     },
     "icon": {
       "type": "media",
@@ -37,9 +39,9 @@
         }
       }
     },
-    "meal": {
+    "meals": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::meal.meal",
       "inversedBy": "categories"
     }

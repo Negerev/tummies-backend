@@ -22,7 +22,9 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true,
+      "unique": true
     },
     "description": {
       "type": "text",
@@ -85,21 +87,21 @@
         }
       }
     },
-    "categories": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::category.category",
-      "mappedBy": "meal"
-    },
     "rating": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::rating.rating",
       "inversedBy": "meal_ids"
     },
-    "favourite": {
+    "categories": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "meals"
+    },
+    "favourites": {
+      "type": "relation",
+      "relation": "manyToMany",
       "target": "api::favourite.favourite",
       "inversedBy": "meal_ids"
     }

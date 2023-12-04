@@ -45,23 +45,23 @@
       "type": "integer",
       "pluginOptions": {}
     },
-    "activities": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::activity.activity",
-      "mappedBy": "child"
-    },
-    "warnings": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::warning.warning",
-      "mappedBy": "child"
-    },
     "user": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "children"
+    },
+    "activities": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::activity.activity",
+      "mappedBy": "children"
+    },
+    "warnings": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::warning.warning",
+      "mappedBy": "children"
     }
   }
 }

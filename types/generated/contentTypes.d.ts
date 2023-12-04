@@ -665,11 +665,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     age: Attribute.Integer;
     gender: Attribute.Enumeration<['male', 'female']>;
     photo: Attribute.Media;
-    children: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'oneToMany',
-      'api::child.child'
-    >;
     locations: Attribute.Relation<
       'plugin::users-permissions.user',
       'oneToMany',
@@ -689,6 +684,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'plugin::users-permissions.user',
       'manyToOne',
       'api::subscribe.subscribe'
+    >;
+    children: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::child.child'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -725,6 +725,8 @@ export interface ApiActivityActivity extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -736,9 +738,9 @@ export interface ApiActivityActivity extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    child: Attribute.Relation<
+    children: Attribute.Relation<
       'api::activity.activity',
-      'manyToOne',
+      'manyToMany',
       'api::child.child'
     >;
     createdAt: Attribute.DateTime;
@@ -783,6 +785,8 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -794,9 +798,9 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    meal: Attribute.Relation<
+    meals: Attribute.Relation<
       'api::category.category',
-      'manyToOne',
+      'manyToMany',
       'api::meal.meal'
     >;
     createdAt: Attribute.DateTime;
@@ -841,20 +845,20 @@ export interface ApiChildChild extends Schema.CollectionType {
     gender: Attribute.Enumeration<['male', 'female']>;
     weight: Attribute.Integer;
     height: Attribute.Integer;
-    activities: Attribute.Relation<
-      'api::child.child',
-      'oneToMany',
-      'api::activity.activity'
-    >;
-    warnings: Attribute.Relation<
-      'api::child.child',
-      'oneToMany',
-      'api::warning.warning'
-    >;
     user: Attribute.Relation<
       'api::child.child',
       'manyToOne',
       'plugin::users-permissions.user'
+    >;
+    activities: Attribute.Relation<
+      'api::child.child',
+      'manyToMany',
+      'api::activity.activity'
+    >;
+    warnings: Attribute.Relation<
+      'api::child.child',
+      'manyToMany',
+      'api::warning.warning'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -887,7 +891,7 @@ export interface ApiFavouriteFavourite extends Schema.CollectionType {
   attributes: {
     meal_ids: Attribute.Relation<
       'api::favourite.favourite',
-      'oneToMany',
+      'manyToMany',
       'api::meal.meal'
     >;
     user_ids: Attribute.Relation<
@@ -971,6 +975,8 @@ export interface ApiMealMeal extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1018,19 +1024,19 @@ export interface ApiMealMeal extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    categories: Attribute.Relation<
-      'api::meal.meal',
-      'oneToMany',
-      'api::category.category'
-    >;
     rating: Attribute.Relation<
       'api::meal.meal',
       'manyToOne',
       'api::rating.rating'
     >;
-    favourite: Attribute.Relation<
+    categories: Attribute.Relation<
       'api::meal.meal',
-      'manyToOne',
+      'manyToMany',
+      'api::category.category'
+    >;
+    favourites: Attribute.Relation<
+      'api::meal.meal',
+      'manyToMany',
       'api::favourite.favourite'
     >;
     createdAt: Attribute.DateTime;
@@ -1099,12 +1105,13 @@ export interface ApiSubscribeSubscribe extends Schema.CollectionType {
     singularName: 'subscribe';
     pluralName: 'subscribes';
     displayName: 'Subscribe';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
+    title: Attribute.String & Attribute.Required;
     price: Attribute.Decimal;
     users: Attribute.Relation<
       'api::subscribe.subscribe',
@@ -1147,6 +1154,8 @@ export interface ApiWarningWarning extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1158,9 +1167,9 @@ export interface ApiWarningWarning extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    child: Attribute.Relation<
+    children: Attribute.Relation<
       'api::warning.warning',
-      'manyToOne',
+      'manyToMany',
       'api::child.child'
     >;
     createdAt: Attribute.DateTime;
