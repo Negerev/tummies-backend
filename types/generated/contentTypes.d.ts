@@ -879,7 +879,7 @@ export interface ApiChildChild extends Schema.CollectionType {
     draftAndPublish: false;
   };
   attributes: {
-    name: Attribute.String;
+    name: Attribute.String & Attribute.Required;
     photo: Attribute.Media;
     age: Attribute.Integer;
     gender: Attribute.Enumeration<['male', 'female']>;
@@ -968,7 +968,7 @@ export interface ApiLocationLocation extends Schema.CollectionType {
     draftAndPublish: false;
   };
   attributes: {
-    title: Attribute.String;
+    title: Attribute.String & Attribute.Required;
     area: Attribute.Text;
     building: Attribute.String;
     flat: Attribute.String;
