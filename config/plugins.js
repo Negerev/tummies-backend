@@ -15,6 +15,7 @@ module.exports = ({env}) => ({
         },
     },
     graphql: {
+        enabled: false,
         config: {
             endpoint: '/graphql',
             shadowCRUD: true,
@@ -25,5 +26,9 @@ module.exports = ({env}) => ({
                 tracing: false,
             },
         },
+    },
+    "firebase-auth": {
+        enabled: true,
+        config:{ FIREBASE_JSON_ENCRYPTION_KEY: env('FIREBASE_JSON_ENCRYPTION_KEY') }
     },
 });
