@@ -31,4 +31,10 @@ module.exports = ({env}) => ({
         enabled: true,
         config:{ FIREBASE_JSON_ENCRYPTION_KEY: env('FIREBASE_JSON_ENCRYPTION_KEY') }
     },
+    'import-export-entries': {
+        enabled: true,
+        config: {
+            // See `Config` section.
+        },
+    },
 });
