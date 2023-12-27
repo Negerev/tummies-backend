@@ -47,14 +47,6 @@
         }
       }
     },
-    "ingridient": {
-      "type": "text",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "carbohydrate": {
       "type": "integer",
       "pluginOptions": {
@@ -79,7 +71,7 @@
         }
       }
     },
-    "calorieContent": {
+    "calorie_content": {
       "type": "integer",
       "pluginOptions": {
         "i18n": {
@@ -104,6 +96,17 @@
       "relation": "oneToMany",
       "target": "api::rating.rating",
       "mappedBy": "meal_id"
+    },
+    "Ingridients": {
+      "displayName": "test",
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "title.test"
     }
   }
 }
