@@ -65,10 +65,10 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "name": {
+    "firstName": {
       "type": "string"
     },
-    "surname": {
+    "lastName": {
       "type": "string"
     },
     "phoneNumber": {
@@ -92,18 +92,6 @@
         "images"
       ]
     },
-    "locations": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::location.location",
-      "mappedBy": "user"
-    },
-    "subscribe": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::subscribe.subscribe",
-      "inversedBy": "users"
-    },
     "children": {
       "type": "relation",
       "relation": "oneToMany",
@@ -121,6 +109,9 @@
       "relation": "oneToMany",
       "target": "api::rating.rating",
       "mappedBy": "user"
+    },
+    "firebaseUserID": {
+      "type": "string"
     }
   }
 }

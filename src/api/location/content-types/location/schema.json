@@ -28,11 +28,11 @@
     "street": {
       "type": "text"
     },
-    "user": {
+    "child": {
       "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "locations"
+      "relation": "oneToOne",
+      "target": "api::child.child",
+      "inversedBy": "location"
     },
     "coordinates": {
       "type": "customField",

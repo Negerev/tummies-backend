@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "categories",
+  "collectionName": "type_of_meals",
   "info": {
-    "singularName": "category",
-    "pluralName": "categories",
-    "displayName": "Age category",
+    "singularName": "type-of-meal",
+    "pluralName": "type-of-meals",
+    "displayName": "Type of meal",
     "description": ""
   },
   "options": {
@@ -16,21 +16,20 @@
     }
   },
   "attributes": {
-    "title": {
+    "Title": {
       "type": "string",
+      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "required": true,
-      "unique": true
+      }
     },
     "meals": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::meal.meal",
-      "mappedBy": "age_category"
+      "mappedBy": "type_of_meal"
     }
   }
 }

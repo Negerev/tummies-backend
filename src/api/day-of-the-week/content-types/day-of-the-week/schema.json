@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "day_of_the_weeks",
+  "info": {
+    "singularName": "day-of-the-week",
+    "pluralName": "day-of-the-weeks",
+    "displayName": "Day of the week"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "meals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::meal.meal",
+      "mappedBy": "day_of_the_week"
+    }
+  }
+}

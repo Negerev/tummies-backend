@@ -63,6 +63,24 @@
       "relation": "manyToMany",
       "target": "api::warning.warning",
       "mappedBy": "children"
+    },
+    "location": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location",
+      "mappedBy": "child"
+    },
+    "order": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order.order",
+      "mappedBy": "child"
+    },
+    "subscribe": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::subscribe.subscribe",
+      "inversedBy": "children"
     }
   }
 }

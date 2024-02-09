@@ -1,12 +1,12 @@
 {
-  "collectionName": "components_title_tests",
+  "collectionName": "components_title_123s",
   "info": {
-    "displayName": "test",
+    "displayName": "123",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "ingredient": {
+    "ingredients_for_choose": {
       "type": "string"
     }
   }

@@ -19,10 +19,10 @@
     "price": {
       "type": "decimal"
     },
-    "users": {
+    "children": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "plugin::users-permissions.user",
+      "target": "api::child.child",
       "mappedBy": "subscribe"
     }
   }
