@@ -4,7 +4,8 @@
   "info": {
     "singularName": "day-of-the-week",
     "pluralName": "day-of-the-weeks",
-    "displayName": "Day of the week"
+    "displayName": "Day of the week",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,6 +20,10 @@
       "relation": "oneToMany",
       "target": "api::meal.meal",
       "mappedBy": "day_of_the_week"
+    },
+    "number": {
+      "type": "integer",
+      "unique": true
     }
   }
 }

@@ -112,6 +112,18 @@
     },
     "firebaseUserID": {
       "type": "string"
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order",
+      "mappedBy": "user"
+    },
+    "payment_histories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::payment-history.payment-history",
+      "mappedBy": "users_permissions_user"
     }
   }
 }

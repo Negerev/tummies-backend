@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_one_ingredient_one_ingredient_for_chooses",
+  "info": {
+    "displayName": "one ingredient for choose"
+  },
+  "options": {},
+  "attributes": {
+    "one_ingredient_for_choose": {
+      "type": "string"
+    }
+  }
+}

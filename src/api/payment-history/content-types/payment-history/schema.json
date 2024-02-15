@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "orders",
+  "collectionName": "payment_histories",
   "info": {
-    "singularName": "order",
-    "pluralName": "orders",
-    "displayName": "Order",
-    "description": ""
+    "singularName": "payment-history",
+    "pluralName": "payment-histories",
+    "displayName": "Payment history"
   },
   "options": {
     "draftAndPublish": true
@@ -16,37 +15,35 @@
     }
   },
   "attributes": {
-    "delivery_from": {
+    "title": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "date"
+      "type": "string"
     },
-    "times_of_day": {
+    "price": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "enumeration",
-      "enum": [
-        "Morning",
-        "Evening"
-      ]
+      "type": "string"
     },
-    "child": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::child.child",
-      "inversedBy": "order"
+    "datetime": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "datetime"
     },
-    "user": {
+    "users_permissions_user": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
-      "inversedBy": "orders"
+      "inversedBy": "payment_histories"
     }
   }
 }

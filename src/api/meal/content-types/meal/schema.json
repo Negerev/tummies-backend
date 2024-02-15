@@ -26,14 +26,6 @@
       "required": true,
       "unique": false
     },
-    "description": {
-      "type": "text",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "icon": {
       "type": "media",
       "multiple": false,
@@ -58,17 +50,6 @@
       "relation": "oneToMany",
       "target": "api::rating.rating",
       "mappedBy": "meal_id"
-    },
-    "ingredients": {
-      "displayName": "test",
-      "type": "component",
-      "repeatable": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "title.test"
     },
     "type_of_meal": {
       "type": "relation",
@@ -115,15 +96,24 @@
       },
       "component": "title.123"
     },
-    "is_one_ingredient_for_choose": {
+    "ingredients": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "boolean",
-      "required": false,
-      "default": false
+      "type": "text"
+    },
+    "one_ingredient_for_choose": {
+      "displayName": "one ingredient for choose",
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "one-ingredient.one-ingredient-for-choose"
     }
   }
 }
