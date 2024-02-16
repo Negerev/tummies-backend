@@ -24,7 +24,7 @@
       },
       "type": "date"
     },
-    "times_of_day": {
+    "delivery_time": {
       "pluginOptions": {
         "i18n": {
           "localized": true

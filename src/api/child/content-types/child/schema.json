@@ -81,6 +81,25 @@
       "relation": "manyToOne",
       "target": "api::subscribe.subscribe",
       "inversedBy": "children"
+    },
+    "delivery_time": {
+      "type": "enumeration",
+      "enum": [
+        "Morning",
+        "Evening"
+      ]
+    },
+    "favourite_meals": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meal.meal",
+      "inversedBy": "children_who_like"
+    },
+    "ratings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::rating.rating",
+      "mappedBy": "child"
     }
   }
 }

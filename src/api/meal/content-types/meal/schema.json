@@ -39,18 +39,6 @@
         }
       }
     },
-    "favourites": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::favourite.favourite",
-      "inversedBy": "meal_ids"
-    },
-    "ratings": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::rating.rating",
-      "mappedBy": "meal_id"
-    },
     "type_of_meal": {
       "type": "relation",
       "relation": "manyToOne",
@@ -114,6 +102,18 @@
         }
       },
       "component": "one-ingredient.one-ingredient-for-choose"
+    },
+    "children_who_like": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::child.child",
+      "mappedBy": "favourite_meals"
+    },
+    "ratings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::rating.rating",
+      "mappedBy": "meal"
     }
   }
 }

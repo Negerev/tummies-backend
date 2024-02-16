@@ -17,13 +17,13 @@
       "min": 0,
       "max": 5
     },
-    "user": {
+    "child": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
+      "target": "api::child.child",
       "inversedBy": "ratings"
     },
-    "meal_id": {
+    "meal": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::meal.meal",

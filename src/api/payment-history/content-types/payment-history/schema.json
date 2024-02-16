@@ -4,7 +4,8 @@
   "info": {
     "singularName": "payment-history",
     "pluralName": "payment-histories",
-    "displayName": "Payment history"
+    "displayName": "Payment history",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -39,7 +40,7 @@
       },
       "type": "datetime"
     },
-    "users_permissions_user": {
+    "user": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",

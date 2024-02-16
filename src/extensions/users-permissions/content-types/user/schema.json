@@ -98,18 +98,6 @@
       "target": "api::child.child",
       "mappedBy": "user"
     },
-    "favourite": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::favourite.favourite",
-      "mappedBy": "user_id"
-    },
-    "ratings": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::rating.rating",
-      "mappedBy": "user"
-    },
     "firebaseUserID": {
       "type": "string"
     },
@@ -123,7 +111,7 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::payment-history.payment-history",
-      "mappedBy": "users_permissions_user"
+      "mappedBy": "user"
     }
   }
 }
